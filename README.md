@@ -43,8 +43,6 @@ Here are some screenshots of the application in action:
 
 ![Browser console](https://github.com/user-attachments/assets/e8992ba1-5d39-409f-8e7c-de0ba4cbb4fe)
 
-Feel free to replace the `path/to/screenshot1.png` with the actual path to your images. 🖼️
-
 ## Contributing 🤗
 
 If you'd like to contribute to the development of this chatroom, feel free to fork the repository, make your changes, and submit a pull request. All contributions are welcome! 🙌
