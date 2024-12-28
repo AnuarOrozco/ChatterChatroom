@@ -1,13 +1,17 @@
 package com.chatter.model;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
-@AllArgsConstructor @NoArgsConstructor
 public class ChatMessage {
 
     private String username;
     private String content;
+
+    public ChatMessage() {
+    }
+
+    public ChatMessage(String username, String content) {
+        this.username = username;
+        this.content = content;
+    }
 
     public String getUsername() {
         return username;
