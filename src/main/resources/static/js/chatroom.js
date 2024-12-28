@@ -20,7 +20,11 @@ function connect() {
         stompClient.subscribe('/topic/messages', function(messageOutput) {
             showMessage(JSON.parse(messageOutput.body));
         });
-        stompClient.send("/app/chat", {}, JSON.stringify({'username': username, 'content': username + ' has joined the chat'}));
+
+        stompClient.send("/app/chat", {}, JSON.stringify({
+            'username': username,
+            'content': username + ' has joined the chat'
+        }));
     });
 }
 
@@ -31,7 +35,10 @@ function sendMessage() {
 }
 
 function leaveChat() {
-    stompClient.send("/app/leave", {}, JSON.stringify({'username': username, 'content': username + ' has left the chat'}));
+    stompClient.send("/app/leave", {}, JSON.stringify({
+        'username': username,
+        'content': username + ' has left the chat'
+    }));
     window.location.href = "/";
 }
 

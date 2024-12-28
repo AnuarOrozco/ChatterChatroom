@@ -13,8 +13,9 @@
 
 <div class="main-content">
     <div class="header">
-        <h1 th:text="${username} + ' Chatroom'"></h1>
-        <button th:onclick="'window.location.href=\'/leave-chat\'" th:text="'Leave Chat'">Leave Chat</button>
+        <!-- Asegurarse de que el id 'username' esté aquí -->
+        <h1 id="username" th:text="${username} + ' Chatroom'"></h1>
+        <button onclick="leaveChat()" th:text="'Leave Chat'">Leave Chat</button>
     </div>
 
     <div class="text-section">
@@ -22,11 +23,10 @@
     </div>
 
     <div class="messages-section" id="messages">
-
     </div>
 
     <div class="form-section">
-        <input type="text" id="messageInput" placeholder="Escribe tu mensaje...">
+        <input type="text" id="messageInput" placeholder="Write your message...">
         <button onclick="sendMessage()">Send</button>
     </div>
 </div>
@@ -35,10 +35,11 @@
     <p>&copy; 2024 Developed by Anuar Avalos Orozco | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
 </footer>
 
+<!-- Asegúrate de que el script se cargue después del contenido -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
 
+<!-- Si el archivo JS es importante para la interacción, este debería estar después de todo el contenido HTML -->
 <script src="/js/chatroom.js"></script>
-
 </body>
 </html>
