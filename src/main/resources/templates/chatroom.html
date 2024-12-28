@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatroom</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/chatroomStyles.css">
+    <link rel="icon" type="image/x-icon" href="/images/Logo png.png">
+</head>
+<body>
+
+<div class="main-content">
+    <div class="header">
+        <h1 th:text="${username} + ' Chatroom'"></h1>
+        <button th:onclick="'window.location.href=\'/leave-chat\'" th:text="'Leave Chat'">Leave Chat</button>
+    </div>
+
+    <div class="text-section">
+        <h1>Welcome, <span th:text="${username}"></span>!</h1>
+    </div>
+
+    <div class="messages-section" id="messages">
+
+    </div>
+
+    <div class="form-section">
+        <input type="text" id="messageInput" placeholder="Escribe tu mensaje...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Developed by Anuar Avalos Orozco | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+
+<script src="/js/chatroom.js"></script>
+
+</body>
+</html>
